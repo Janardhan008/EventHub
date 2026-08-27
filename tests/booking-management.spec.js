@@ -77,6 +77,7 @@ test.describe('Booking management', () => {
     await confirmCancellation.evaluate(button => button.click());
 
     await expect(page).toHaveURL(/\/bookings$/);
+    await page.reload();
     await expect(page.getByText('No bookings yet')).toBeVisible();
   });
 
